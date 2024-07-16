@@ -1,22 +1,19 @@
 #!/bin/sh
 
-if ! command -v git; then
-    echo "[fail] : git"
+if [ -d ~/.config/nvim ]; then
+    echo "[fail] : ~/.config/nvim"
     exit 1
 fi
 
-if [ -d ~/.config/nvim ]; then
-    echo "[fail] : ~/.config/nvim"
-    exit 2
-fi
+pacman -S --needed --noconfirm base-devel cmake unzip ninja curl
 
-sudo pacman -S base-devel cmake unzip ninja curl
+pacman -S --needed --noconfirm git
 
 git submodule update --init
 
 cd neovim
 make CMAKE_BUILD_TYPE=Release
-sudo make install
+sudo make install # todo: rm sudo?
 
 mkdir -p ~/.config
 
