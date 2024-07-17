@@ -15,8 +15,18 @@ cd neovim
 make CMAKE_BUILD_TYPE=Release
 sudo make install # todo: rm sudo?
 
-mkdir -p ~/.config
+# lazy
+pacman -S --noconfirm luarocks
 
+# telescope
+pacman -S --noconfirm ripgrep fd
+
+# lsp
+pacman -S --noconfirm python3
+
+# ~/.config/nvim
+mkdir -p ~/.config
 ln -s "$(pwd)/.config/nvim" ~/.config/nvim
 
 echo "[success]"
+
