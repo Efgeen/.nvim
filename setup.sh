@@ -15,13 +15,13 @@ make CMAKE_BUILD_TYPE=Release
 sudo make install # todo: rm sudo?
 
 # lazy
-pacman -S --noconfirm luarocks
+pacman -S --needed --noconfirm lua51 luarocks
 
 # telescope
-pacman -S --noconfirm ripgrep fd
+pacman -S --needed --noconfirm ripgrep fd
 
 # lsp
-pacman -S --noconfirm python3
+pacman -S --needed --noconfirm python3
 
 # ~/.config/nvim
 mkdir -p ~/.config
