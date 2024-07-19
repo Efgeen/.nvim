@@ -13,6 +13,7 @@ git submodule update --init
 cd neovim
 make CMAKE_BUILD_TYPE=Release
 make install
+cd ..
 
 # lazy
 pacman -S --needed --noconfirm lua51 luarocks
@@ -28,4 +29,3 @@ mkdir -p ~/.config
 ln -s "$(pwd)/nvim" ~/.config/nvim
 
 echo "[.nvim] : success"
-
