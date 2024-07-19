@@ -2,17 +2,17 @@
 
 # assert
 if [ -d ~/.config/nvim ]; then
-    echo "[fail] : ~/.config/nvim"
+    echo "[.nvim] : fail (~/.config/nvim)"
     exit 1
 fi
 
 # neovim
-pacman -S --needed --noconfirm base-devel cmake unzip ninja curl
 pacman -S --needed --noconfirm git
+pacman -S --needed --noconfirm base-devel cmake unzip ninja curl
 git submodule update --init
 cd neovim
 make CMAKE_BUILD_TYPE=Release
-sudo make install # todo: rm sudo?
+make install
 
 # lazy
 pacman -S --needed --noconfirm lua51 luarocks
@@ -25,7 +25,7 @@ pacman -S --needed --noconfirm python3
 
 # ~/.config/nvim
 mkdir -p ~/.config
-ln -s "$(pwd)/.config/nvim" ~/.config/nvim
+ln -s "$(pwd)/nvim" ~/.config/nvim
 
-echo "[success]"
+echo "[.nvim] : success"
 
