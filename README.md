@@ -1,5 +1,5 @@
 # .nvim
 
 ```sh
-sudo sh setup.sh
+sudo ./setup.sh
 ```
