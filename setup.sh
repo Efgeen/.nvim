@@ -5,7 +5,7 @@ echo -e "\033[0;32m[.nvim] : setup...\033[0m"
 # ~/.config/nvim
 if [ -d ~/.config/nvim ]; then
     echo -e "\033[0;31m[.nvim] : fail (-d ~/.config/nvim)\033[0m"
-    exit 1
+    exit
 fi
 
 # syu
