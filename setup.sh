@@ -8,9 +8,14 @@ if [ -d ~/.config/nvim ]; then
     exit 1
 fi
 
+# syu
+pacman -Syu --noconfirm --needed
+
+# git
+pacman -S --noconfirm --needed git
+
 # neovim
-pacman -S --needed --noconfirm git
-pacman -S --needed --noconfirm base-devel cmake unzip ninja curl
+pacman -S --noconfirm --needed base-devel cmake unzip ninja curl
 git submodule update --init
 cd neovim
 make CMAKE_BUILD_TYPE=Release
@@ -18,13 +23,13 @@ make install
 cd ..
 
 # lazy
-pacman -S --needed --noconfirm lua51 luarocks
+pacman -S --noconfirm --needed lua51 luarocks
 
 # telescope
-pacman -S --needed --noconfirm ripgrep fd
+pacman -S --noconfirm --needed ripgrep fd
 
 # lsp
-pacman -S --needed --noconfirm python3
+pacman -S --noconfirm --needed python3
 
 # ~/.config/nvim
 mkdir -p ~/.config
