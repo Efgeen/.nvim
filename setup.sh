@@ -1,10 +1,10 @@
 #!/bin/sh
 
-echo -e "\033[0;32m[.nvim]\033[0m"
+echo -e "\033[0;32m[.nvim] : setup...\033[0m"
 
 # ~/.config/nvim
 if [ -d ~/.config/nvim ]; then
-    echo -e "\033[0;31m[.nvim] : fail (~/.config/nvim)\033[0m"
+    echo -e "\033[0;31m[.nvim] : fail (-d ~/.config/nvim)\033[0m"
     exit 1
 fi
 
@@ -35,4 +35,4 @@ pacman -S --noconfirm --needed python3
 mkdir -p ~/.config
 ln -s "$(pwd)/nvim" ~/.config/nvim
 
-echo -e "\033[0;32m[!.nvim]\033[0m"
+echo -e "\033[0;32m[.nvim] : success\033[0m"
